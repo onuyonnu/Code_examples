@@ -1,23 +1,27 @@
 def caesar(plainText, shift):
     ciphertext = ""
-    for ch in plainText.lower():
+    for ch in plainText:
         if ch.isalpha():
             lettersonly = ord(ch) + shift
             if lettersonly > ord('z'):
+                lettersonly -= 26
+            elif lettersonly > ord('Z') and (lettersonly) < ord("a"):
                 lettersonly -= 26
             nechar = chr(lettersonly)
             ciphertext += nechar
         else:
             ciphertext += ch
-    print("Your  is: ", ciphertext)
+    print("Your encoded text is: ", ciphertext)
 
 
 def caesar_key(plainText, shift):
     ciphertext = ""
-    for ch in plainText.lower():
+    for ch in plainText:
         if ch.isalpha():
             lettersonly = ord(ch) - shift
-            if lettersonly < ord('a'):
+            if lettersonly < ord('a') and lettersonly > ord("Z"):
+                lettersonly += 26
+            elif lettersonly < ord("A"):
                 lettersonly += 26
             nechar = chr(lettersonly)
             ciphertext += nechar
