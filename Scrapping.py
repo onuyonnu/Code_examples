@@ -20,11 +20,11 @@ time.sleep(2)
 
 username = driver.find_element(By.ID, "username")
 
-username.send_keys("o.dominique.dagenais@gmail.com")
+username.send_keys("")
 
 pword = driver.find_element(By.ID, "password")
 
-pword.send_keys("Champex23")
+pword.send_keys("")
 
 driver.find_element_by_xpath("//button[@type='submit']").click()
 time.sleep(2)
